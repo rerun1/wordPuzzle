@@ -1,6 +1,18 @@
-body {
-  background-color: rgba(0,0,0,.5);
-}
 textarea {
   width: 100%;
+}
+h3 {
+  color: #17a2b8;
+}
+h5 {
+  color: rgba(0,0,0,.5);
+}
+.container-fluid {
+  height: 100vh;
+}
+.greyBackground {
+  background-color: rgba(0,0,0,.5);
+}
+#showSentence {
+  display: none;
 }

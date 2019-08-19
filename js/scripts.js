@@ -1,41 +1,80 @@
 var userSentence = "";
-var userSentenceString = [];
-var vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
-var puzzleSentence = [];
+var sentenceSplit = [];
+var puzzleSentenceArray = [];
+var puzzleSentence = "";
 
-
-var puzzle = function(userSentence) {
-
-  userSentenceString = userSentence.split('');
-
-  console.log(userSentenceString);
-
-
-  for (var letterIndex = 0; letterIndex < userSentenceString.length; letterIndex += 1) {
-    if (letterIndex === vowels[]){
-      puzzleSentence = userSentenceString.splice(0, 0, "-");
-      return puzzleSentence;
-    }
+var makePuzzle = function(sentenceSplit) {
+  for (var letter = 0; letter < sentenceSplit.length; letter += 1) {
+    puzzleSentenceArray = sentenceSplit.map(function(letter) {
+      if (letter === "a") {
+        return "-";
+      } else if (letter === "e") {
+        return "-";
+      } else if (letter === "i") {
+        return "-";
+      } else if (letter === "o") {
+        return "-";
+      } else if (letter === "u") {
+        return "-";
+      } else if (letter === "y") {
+        return "-";
+      } else if (letter === "A") {
+        return "-";
+      } else if (letter === "E") {
+        return "-";
+      } else if (letter === "I") {
+        return "-";
+      } else if (letter === "O") {
+        return "-";
+      } else if (letter === "U") {
+        return "-";
+      } else if (letter === "Y") {
+        return "-";
+      } else {
+        return letter;
+      }
+    });
+    puzzleSentence = puzzleSentenceArray.join(' ');
   }
-
-  console.log
-
-
 };
+
+var resetForm = function(){
+  $("textarea#userSentence").val("");
+}
 
 $(document).ready(function(){
 
   $("form#puzzle").submit(function(event){
     event.preventDefault();
 
-    alert("form works");
+    $("h3#puzzle").empty();
 
     userSentence = $("textarea#userSentence").val();
+    sentenceSplit = userSentence.split('');
 
-    puzzle(userSentence);
+    makePuzzle(sentenceSplit);
 
-    console.log(userSentenceString);
+    $("h3#puzzle").text(puzzleSentence);
 
+    $("form#puzzle").hide();
+
+    $("div#container").removeClass("greyBackground");
+
+    $("div#showSentence").show();
+
+    console.log(puzzleSentence);
+
+  });
+
+  $("button#showButton").click(function(){
+    $("p#originalSentence").text(userSentence);
+  });
+
+  $("button#playAgain").click(function(){
+    $("form#puzzle").show();
+    $("div#showSentence").hide();
+    $("div#container").addClass("greyBackground");
+    resetForm();
   });
 
 });

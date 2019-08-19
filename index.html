@@ -10,13 +10,21 @@
     <title>Word Puzzle</title>
   </head>
   <body>
-    <div class="container">
-      <h1>Word Puzzle</h1>
+    <div id="container" class="container-fluid greyBackground">
       <form id="puzzle">
+        <h1 class="pt-3">Word Puzzle</h1>
         <label for="userSentence">Enter a Sentence Here:</label>
-        <textarea id="userSentence"></textarea>
-        <button type="submit" class="btn btn-info">See a Word Puzzle...</button>
+        <textarea id="userSentence" class="mb-3"></textarea>
+        <button type="submit" class="btn btn-info mt-3">See a Word Puzzle...</button>
       </form>
+      <div id="showSentence" class="mt-3">
+      <h5>Fill in the blanks with a vowel</h5>
+      <h3 id="puzzle" class="mt-1 mb-3"></h3>
+        <h5 class="mt-3">Give up? Wanna see the original sentence?</h5>
+        <button type="button" id="showButton" class="btn btn-info mt-3">Original Sentence</button>
+        <p id="originalSentence" class="mt-3"></p>
+        <button type="button" id="playAgain" class="btn btn-primary">Create another puzzle</button>
+      </div>
     </div>
   </body>
 </html>
